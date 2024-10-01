@@ -14,6 +14,9 @@ const Parallax = ({type}) => {
     const yText = useTransform(scrollYProgress, [0,1], ["0%", "500%"]);
     const yBg = useTransform(scrollYProgress, [0,1], ["0%", "100%"]);
 
+    function parallaxTypes() {
+        return type===""
+    }
     return (
         <div className='parallax'
             ref={ref} 
@@ -25,7 +28,11 @@ const Parallax = ({type}) => {
             }}
         >
             <motion.h1 style={{ y : yText }}>
-                {type==="services" ? "What We Do?" : "What We Did?"}</motion.h1>
+                {type==="services" ? "What We Do?" 
+                : type==="about" ? "Who We Are?" 
+                : type==="portfolio" ? "What We Did?"
+                : "Hello!"
+                }</motion.h1>
             <motion.div className='mountains'></motion.div>
             <motion.div 
                 className='planets'

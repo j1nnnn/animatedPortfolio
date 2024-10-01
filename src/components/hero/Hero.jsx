@@ -66,7 +66,6 @@ const Hero = () => {
                 <img src='/hero.png' alt='' />
             </div>       
         </div>
-        // <div>Hero</div>
     )
 }
 
